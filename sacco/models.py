@@ -47,3 +47,5 @@ class Deposit(models.Model):
 # python manage.py migrate
 
 # python manage.py populate
+def customer():
+    return None
