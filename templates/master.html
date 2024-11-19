@@ -22,18 +22,27 @@
         legend {
             font-size: 1rem;
         }
+        .general{
+            background-color: #00363a;
+        }
+       
     </style>
 </head>
 <body>
+<div class="general">
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container-fluid">
+    <div class="container">
         <a class="navbar-brand" href="">Umoja Sacco</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
+                
+                 <li class="nav-item">
+                    <a class="nav-link" href="#">home</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'customers' %}">Customers</a>
                 </li>
@@ -49,7 +58,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Transactions</a>
                 </li>
-
+                  
             </ul>
             <form class="d-flex" method="get" action="{% url 'search_customer' %}">
                 <input class="form-control me-2" type="text" name="search" placeholder="Search">
@@ -71,6 +80,7 @@
 {% block content %}
 
 {% endblock %}
+</div>
 
 </body>
 </html>

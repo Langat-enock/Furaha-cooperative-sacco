@@ -1,10 +1,12 @@
 from django.contrib import messages
+from django.contrib.auth import authenticate
+from django.contrib.auth.decorators import login_required, permission_required
 from django.core.paginator import Paginator, EmptyPage
 from django.db.models import Q, Sum
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
-from sacco.app_forms import CustomerForm, DepositForm
+from sacco.app_forms import CustomerForm, DepositForm, LoginForm
 from sacco.models import Customer, Deposit
 
 
@@ -30,6 +32,10 @@ def test(request):
 # http://localhost:8000/
 # http://localhost:8000/test
 # python manage.py runserver 8001
+@login_required
+
+def home(request):
+    return render(request, "home.html")
 
 def customers(request):
     data = Customer.objects.all().order_by('id').values()# ORM select * from customers
@@ -41,7 +47,8 @@ def customers(request):
         paginated_data = paginator.page(1)
     return render(request, "customers.html", {"data": paginated_data})
 
-
+@login_required
+@permission_required("sacco.delete_customer",raise_exception=True)
 def delete_customer(request, customer_id):
     customer = Customer.objects.get(id=customer_id) # select * from customers where id=7
     customer.delete() # delete from customers where id=7
@@ -49,6 +56,8 @@ def delete_customer(request, customer_id):
     return redirect('customers')
 
 
+@login_required
+@permission_required("sacco.add_customer",raise_exception=True)
 def add_customer(request):
     if request.method == "POST":
         form = CustomerForm(request.POST, request.FILES)
@@ -60,7 +69,8 @@ def add_customer(request):
         form = CustomerForm()
     return render(request, 'customer_form.html', {"form": form})
 
-
+@login_required
+@permission_required("sacco.change_customer",raise_exception=True)
 def update_customer(request, customer_id):
     customer = get_object_or_404(Customer, id=customer_id)
     if request.method == "POST":
@@ -102,4 +112,32 @@ def customer_details(request,customer_id):
     total = Deposit.objects.filter(customer=customer).filter(status=True).aggregate(Sum('amount'))['amount__sum']
     return render(request, 'details.html', {'customer': customer, 'deposits': deposits, 'total': total})
 
+
+def login_user(request):
+    if request.method == "GET":
+        form = LoginForm()
+        return render(request, "login_form.html", {"form": form})
+    elif request.method == "POST":
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user:
+                login(request, user) # sessions # cookies
+                return redirect('customers')
+        messages.error(request, "Invalid username or password")
+        return render(request, "login_form.html", {"form": form})
+
+
+# sql injection
+def signout_user(request):
+    logout(request)
+    return redirect('login')
+
+
+
+
 # pip install Pillow
+#  sql injection
+# underground website
