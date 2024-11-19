@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, permission_required
 from django.core.paginator import Paginator, EmptyPage
 from django.db.models import Q, Sum
@@ -32,11 +32,8 @@ def test(request):
 # http://localhost:8000/
 # http://localhost:8000/test
 # python manage.py runserver 8001
+
 @login_required
-
-def home(request):
-    return render(request, "home.html")
-
 def customers(request):
     data = Customer.objects.all().order_by('id').values()# ORM select * from customers
     paginator = Paginator(data, 15)
@@ -48,16 +45,15 @@ def customers(request):
     return render(request, "customers.html", {"data": paginated_data})
 
 @login_required
-@permission_required("sacco.delete_customer",raise_exception=True)
+@permission_required("sacco.delete_customer", raise_exception=True)
 def delete_customer(request, customer_id):
     customer = Customer.objects.get(id=customer_id) # select * from customers where id=7
     customer.delete() # delete from customers where id=7
     messages.info(request, f"Customer {customer.first_name} was deleted!!")
     return redirect('customers')
 
-
 @login_required
-@permission_required("sacco.add_customer",raise_exception=True)
+@permission_required("sacco.add_customer", raise_exception=True)
 def add_customer(request):
     if request.method == "POST":
         form = CustomerForm(request.POST, request.FILES)
@@ -70,7 +66,7 @@ def add_customer(request):
     return render(request, 'customer_form.html', {"form": form})
 
 @login_required
-@permission_required("sacco.change_customer",raise_exception=True)
+@permission_required("sacco.change_customer", raise_exception=True)
 def update_customer(request, customer_id):
     customer = get_object_or_404(Customer, id=customer_id)
     if request.method == "POST":
@@ -84,13 +80,16 @@ def update_customer(request, customer_id):
     return render(request, 'customer_update_form.html', {"form": form})
 
 
-
+@login_required
+@permission_required("sacco.view_customer", raise_exception=True)
 def search_customer(request):
     search_term = request.GET.get('search')
     data = Customer.objects.filter( Q(first_name__icontains=search_term) | Q(last_name__icontains=search_term) | Q(email__icontains=search_term)  )
     return render(request, "search.html", {"customers": data})
 
 
+@login_required
+@permission_required("sacco.add_deposit", raise_exception=True)
 def deposit(request, customer_id):
     customer = get_object_or_404(Customer, id=customer_id)
     if request.method == "POST":
@@ -105,7 +104,8 @@ def deposit(request, customer_id):
         form = DepositForm()
     return render(request, 'deposit_form.html', {"form": form, "customer": customer})
 
-
+@login_required
+@permission_required("sacco.view_customer", raise_exception=True)
 def customer_details(request,customer_id):
     customer = Customer.objects.get(id=customer_id)
     deposits = customer.deposits.all()
@@ -129,15 +129,13 @@ def login_user(request):
         messages.error(request, "Invalid username or password")
         return render(request, "login_form.html", {"form": form})
 
-
 # sql injection
+@login_required
 def signout_user(request):
     logout(request)
     return redirect('login')
 
 
 
-
 # pip install Pillow
-#  sql injection
 # underground website
