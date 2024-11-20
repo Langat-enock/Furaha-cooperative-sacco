@@ -33,6 +33,7 @@ def test(request):
 # http://localhost:8000/test
 # python manage.py runserver 8001
 
+
 @login_required
 def customers(request):
     data = Customer.objects.all().order_by('id').values()# ORM select * from customers
