@@ -10,6 +10,9 @@ from sacco.app_forms import CustomerForm, DepositForm, LoginForm
 from sacco.models import Customer, Deposit
 
 
+
+
+
 # Create your views here.
 def test(request):
     #save a customer
@@ -22,36 +25,42 @@ def test(request):
     # c2.save()
     customer_count = Customer.objects.count()
     # fetching one customer
-    c1 = Customer.objects.get(id=1) # select * from customers where id=1
+    c1 = Customer.objects.get(id=1)  # select * from customers where id=1
     print(c1)
     d1 = Deposit(amount=1000, status=True, customer=c1)
     d1.save()
     deposit_count = Deposit.objects.count()
     return HttpResponse(f"Ok, Done, We have {customer_count} customers and {deposit_count} deposits")
 
+
 # http://localhost:8000/
 # http://localhost:8000/test
 # python manage.py runserver 8001
 
 
+def index(request):
+    return render(request, 'index.html')
+
 @login_required
 def customers(request):
-    data = Customer.objects.all().order_by('id').values()# ORM select * from customers
+    data = Customer.objects.all().order_by('id').values()  # ORM select * from customers
     paginator = Paginator(data, 15)
     page = request.GET.get('page', 1)
     try:
-      paginated_data = paginator.page(page)
+        paginated_data = paginator.page(page)
     except  EmptyPage:
         paginated_data = paginator.page(1)
     return render(request, "customers.html", {"data": paginated_data})
 
+
 @login_required
 @permission_required("sacco.delete_customer", raise_exception=True)
 def delete_customer(request, customer_id):
-    customer = Customer.objects.get(id=customer_id) # select * from customers where id=7
-    customer.delete() # delete from customers where id=7
+    customer = Customer.objects.get(id=customer_id)  # select * from customers where id=7
+    customer.delete()  # delete from customers where id=7
     messages.info(request, f"Customer {customer.first_name} was deleted!!")
     return redirect('customers')
+
 
 @login_required
 @permission_required("sacco.add_customer", raise_exception=True)
@@ -65,6 +74,7 @@ def add_customer(request):
     else:
         form = CustomerForm()
     return render(request, 'customer_form.html', {"form": form})
+
 
 @login_required
 @permission_required("sacco.change_customer", raise_exception=True)
@@ -85,8 +95,14 @@ def update_customer(request, customer_id):
 @permission_required("sacco.view_customer", raise_exception=True)
 def search_customer(request):
     search_term = request.GET.get('search')
-    data = Customer.objects.filter( Q(first_name__icontains=search_term) | Q(last_name__icontains=search_term) | Q(email__icontains=search_term)  )
+    data = Customer.objects.filter(
+        Q(first_name__icontains=search_term) | Q(last_name__icontains=search_term) | Q(email__icontains=search_term))
     return render(request, "search.html", {"customers": data})
+
+
+
+
+
 
 
 @login_required
@@ -99,15 +115,19 @@ def deposit(request, customer_id):
             amount = form.cleaned_data['amount']
             depo = Deposit(amount=amount, status=True, customer=customer)
             depo.save()
-            messages.success(request, 'Your deposit has been successfully saved')
+
+
+
+            messages.success(request, 'Your deposit has been successfully saved in your account')
             return redirect('customers')
     else:
         form = DepositForm()
     return render(request, 'deposit_form.html', {"form": form, "customer": customer})
 
+
 @login_required
 @permission_required("sacco.view_customer", raise_exception=True)
-def customer_details(request,customer_id):
+def customer_details(request, customer_id):
     customer = Customer.objects.get(id=customer_id)
     deposits = customer.deposits.all()
     total = Deposit.objects.filter(customer=customer).filter(status=True).aggregate(Sum('amount'))['amount__sum']
@@ -125,10 +145,11 @@ def login_user(request):
             password = form.cleaned_data['password']
             user = authenticate(request, username=username, password=password)
             if user:
-                login(request, user) # sessions # cookies
+                login(request, user)  # sessions # cookies
                 return redirect('customers')
         messages.error(request, "Invalid username or password")
         return render(request, "login_form.html", {"form": form})
+
 
 # sql injection
 @login_required

@@ -1,7 +1,9 @@
 
 from django import forms
+from django.shortcuts import render
 
 from sacco.models import Customer, Deposit
+
 
 GENDER_CHOICES = {"Male": "Male", "Female": "Female"}
 class CustomerForm(forms.ModelForm):
@@ -28,5 +30,10 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
 
 
+
+
 # Update Customer/ Gender radio button
 # Cloning and setting up the virtual env
+
+
+

@@ -5,6 +5,7 @@
 
     {% block title %}
         <title>Sacco</title>
+        
     {% endblock %}
 
 
@@ -23,30 +24,52 @@
             font-size: 1rem;
         }
         .general{
-            background-color: #00363a;
+            background-color: #81d4fa;
         }
+        
+/* Extra Small <= 576px */
+@media screen and (max-width: 576px) {
+  .header-left {
+    display: none;
+  }
+}
+    {#    stylesheet #}
+        
+        body::before {
+  display: block;
+  content: '';
+  height: 60px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .news-input {
+    width: 50%;
+      height: 50%;
+  }
+}
        
     </style>
 </head>
-<body>
-<div class="main">
-    <body>
 
 
 <div class="general">
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="">Umoja Sacco</a>
+        <a class="navbar-brand" href="">Furaha cooperative sacco</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
                 
-                 <li class="nav-item">
-                    <a class="nav-link" href="#">home</a>
-                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'customers' %}">Customers</a>
                 </li>

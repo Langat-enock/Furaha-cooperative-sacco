@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from sacco.models import Customer, Deposit
 
+
 # Register your models here.
 admin.site.site_header = 'Umoja Sacco Administration'
 admin.site.site_title = 'Sacco Admin'
@@ -20,6 +21,7 @@ class DepositAdmin(admin.ModelAdmin):
 
 admin.site.register(Customer, CustomerAdmin)
 admin.site.register(Deposit, DepositAdmin)
+
 
 
 

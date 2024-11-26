@@ -1,7 +1,10 @@
 import os
 import uuid
 
+from django.contrib.auth.models import User
 from django.db import models
+from django.utils.timezone import now
+
 
 def generate_unique_name(instance, filename):
     name = uuid.uuid4() #
@@ -39,6 +42,23 @@ class Deposit(models.Model):
 
     class Meta:
         db_table = 'deposits'
+
+
+
+    class Transaction(models.Model):
+        TRANSACTION_TYPE_CHOICES = [
+            ('DEPOSIT', 'Deposit'),
+            ('WITHDRAWAL', 'Withdrawal'),
+        ]
+
+
+        transaction_type = models.CharField(max_length=10, choices=TRANSACTION_TYPE_CHOICES)
+        amount = models.DecimalField(max_digits=10, decimal_places=2)
+        timestamp = models.DateTimeField(auto_now=now)
+
+        # def __str__(self):
+        #     return f"{self.wallet.user.username} - {self.transaction_type} - {self.amount}"
+
 
 
 
