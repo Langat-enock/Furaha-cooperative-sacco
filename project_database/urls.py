@@ -25,7 +25,11 @@ urlpatterns = [
 
 
     path('', views.index, name='index'),
+
+
     path('customers', views.customers, name='customers'),
+    path('dashboard', views.dashboard, name='dashboard'),
+    path('loan', views.loan, name='loan'),
 
     path('add/customer', views.add_customer, name='add_customer'),
 
@@ -34,11 +38,12 @@ urlpatterns = [
     path('customers/details/<int:customer_id>', views.customer_details, name='customer_details'),
 
     path('customers/deposit/<int:customer_id>', views.deposit, name='deposit'),
+    path('loans/loan/<int:customer_id>', views.loan, name='loan'),
 
     path('customers/search', views.search_customer, name='search_customer'),
 
     path('customers/update/<int:customer_id>', views.update_customer, name='update_customer'),
-path('login', views.login_user, name='login'),
+    path('login', views.login_user, name='login'),
 
     path('logout', views.signout_user, name='logout'),
 

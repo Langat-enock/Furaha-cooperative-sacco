@@ -3,5 +3,47 @@
 }
 
 .content{
+
+
+
     background-color: #a41515;
 }
+
+
+
+   body {
+            margin: 0;
+        }
+        .sidebar {
+            height: 100vh; /* Full height */
+            position: fixed; /* Fixed position */
+            width: 250px; /* Set sidebar width */
+            background-color: #004d4d; /* Sidebar color */
+            color: white;
+            padding-top: 20px;
+        }
+        .content {
+            margin-left: 250px; /* Same as sidebar width */
+            padding: 20px;
+        }
+        .table-container {
+            overflow-x: auto; /* Add horizontal scroll for wide tables */
+        }
+
+        .background image{
+
+            display: flex;              /* Use Flexbox for alignment */
+            justify-content: center;    /* Horizontally center */
+            align-items: center;        /* Vertically center */
+            height: 100vh;              /* Full height of the viewport */
+            margin: 0;                  /* Remove default margin */
+            background-color: #f8f9fa;  /* Light background color */
+        }
+
+        img {
+            width: 50%;                 /* Increase size to 50% of the viewport width */
+            height: auto;               /* Maintain aspect ratio */
+            border: 2px solid #000;     /* Optional: Add a border */
+            border-radius: 10px;        /* Optional: Rounded corners */
+        }
+        }

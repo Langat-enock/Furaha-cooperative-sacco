@@ -1,3 +1,5 @@
+
+
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, permission_required
@@ -6,7 +8,7 @@ from django.db.models import Q, Sum
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
-from sacco.app_forms import CustomerForm, DepositForm, LoginForm
+from sacco.app_forms import CustomerForm, DepositForm, LoginForm, Withdrawal
 from sacco.models import Customer, Deposit
 
 
@@ -151,6 +153,7 @@ def login_user(request):
         return render(request, "login_form.html", {"form": form})
 
 
+
 # sql injection
 @login_required
 def signout_user(request):
@@ -161,3 +164,9 @@ def signout_user(request):
 
 # pip install Pillow
 # underground website
+def loan(request):
+    return render(request, 'loan.html')
+
+
+def dashboard(request):
+    return render(request, 'dashboard.html')

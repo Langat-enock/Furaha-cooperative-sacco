@@ -16,6 +16,7 @@ class Customer(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     email = models.EmailField(unique=True)
+    account_number = models.CharField(max_length=30)
     dob = models.DateField()
     gender = models.CharField(max_length=10)
     weight = models.IntegerField(default=0)
@@ -45,6 +46,8 @@ class Deposit(models.Model):
 
 
 
+
+
     class Transaction(models.Model):
         TRANSACTION_TYPE_CHOICES = [
             ('DEPOSIT', 'Deposit'),
@@ -55,6 +58,26 @@ class Deposit(models.Model):
         transaction_type = models.CharField(max_length=10, choices=TRANSACTION_TYPE_CHOICES)
         amount = models.DecimalField(max_digits=10, decimal_places=2)
         timestamp = models.DateTimeField(auto_now=now)
+
+
+
+        class Loan(models.Model):
+            borrower_name = models.CharField(max_length=255)
+            amount = models.DecimalField(max_digits=10, decimal_places=2)
+            interest_rate = models.DecimalField(max_digits=5, decimal_places=2)
+            start_date = models.DateField()
+            due_date = models.DateField()
+            loan_status = models.CharField(max_length=50,
+                                           choices=[('Pending', 'Pending'), ('Paid', 'Paid'), ('Overdue', 'Overdue')],
+                                           default='Pending')
+
+            def __str__(self):
+                return f"Loan for {self.borrower_name} - Amount: {self.amount}"
+
+            def calculate_total_due(self):
+                # Example calculation, simple interest model
+                duration = (self.due_date - self.start_date).days / 365
+                return self.amount * (1 + self.interest_rate * duration)
 
         # def __str__(self):
         #     return f"{self.wallet.user.username} - {self.transaction_type} - {self.amount}"
@@ -70,3 +93,7 @@ class Deposit(models.Model):
 # python manage.py populate
 def customer():
     return None
+
+
+class Loan:
+    pass

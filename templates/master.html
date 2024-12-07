@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
 
+{% load static %}
+
     {% block title %}
         <title>Sacco</title>
         
     {% endblock %}
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+</head>
 
 
     <!-- Latest compiled and minified CSS -->
@@ -24,7 +29,7 @@
             font-size: 1rem;
         }
         .general{
-            background-color: #81d4fa;
+            background-color: #006b1b;
         }
         
 /* Extra Small <= 576px */
@@ -53,47 +58,718 @@
       height: 50%;
   }
 }
+        
+    {#    stylesheet for dashbord #}
+        
+     body {
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            background-color: #00363a;
+            color: #ffffff;
+            position: fixed;
+        }
+        .sidebar a {
+            color: #ddd;
+            text-decoration: none;
+            padding: 15px;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+        }  
+        
+    {#    now updates #}
        
+           body {
+            margin: 0;
+        }
+        .sidebar {
+            height: 100vh; /* Full height */
+            position: fixed; /* Fixed position */
+            width: 250px; /* Set sidebar width */
+            background-color: #004d4d; /* Sidebar color */
+            color: white;
+            padding-top: 20px;
+        }
+        .content {
+            margin-left: 250px; /* Same as sidebar width */
+            padding: 20px;
+        }
+        .table-container {
+            overflow-x: auto; /* Add horizontal scroll for wide tables */
+        }
     </style>
 </head>
+{% block dashboard %}
+	
 
 
 <div class="general">
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="">Furaha cooperative sacco</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mynavbar">
-            <ul class="navbar-nav me-auto">
-                
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'customers' %}">Customers</a>
-                </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'add_customer' %}">Add Customer</a>
-                </li>
+<div class="d-flex">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3 class="p-3">Furaha Cooperative</h3>
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+            <a href="{% url 'customers' %} ">Customer</a>
+            <a href="#">Statistics</a>
+            <a href="#loan">Loan</a>
+        </div>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Statistics</a>
-                </li>
+        <!-- Main Content -->
+    
+	
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Transactions</a>
-                </li>
-                  
-            </ul>
-            <form class="d-flex" method="get" action="{% url 'search_customer' %}">
-                <input class="form-control me-2" type="text" name="search" placeholder="Search">
-                <button class="btn btn-primary" type="submit">Search</button>
-            </form>
+        <div class="content">
+            <h1>Welcome to Furaha Cooperative</h1>
+            <img src="{% static 'images1/background.jpg' %}" alt="">
+            
+          
+
         </div>
     </div>
-</nav>
+    
+    
+{% endblock %}
+
+
+
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="#">Transactions</a>#}
+{#                </li>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8"/>#}
+{#    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>#}
+{#    <link#}
+{#            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"#}
+{#            rel="stylesheet"#}
+{#            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"#}
+{#            crossorigin="anonymous"#}
+{#    />#}
+{#    <link#}
+{#            rel="stylesheet"#}
+{#            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"#}
+{#    />#}
+{#    <link#}
+{#            href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"#}
+{#            rel="stylesheet"#}
+{#    />#}
+{#    <link rel="stylesheet" href="../main/assets/css/style.css"/>#}
+{#    <title>Furaha cooperative sacco</title>#}
+{#</head>#}
+{#<body>#}
+{#<!-- Navbar -->#}
+{#<nav class="navbar navbar-expand-lg bg-primary navbar-dark py-3 fixed-top">#}
+{#    <div class="container">#}
+{#        <a href="#" class="navbar-brand">Furaha cooperative sacco</a>#}
+{##}
+{#        <button#}
+{#                class="navbar-toggler"#}
+{#                type="button"#}
+{#                data-bs-toggle="collapse"#}
+{#                data-bs-target="#navmenu"#}
+{#        >#}
+{#            <span class="navbar-toggler-icon"></span>#}
+{#        </button>#}
+{##}
+{#        <div class="collapse navbar-collapse bg-secondary " id="navmenu">#}
+{#            <ul class="navbar-nav ms-auto">#}
+{#                <li class="nav-item">#}
+{#                    <a href="#about us" class="nav-link">about us</a>#}
+{#                </li>#}
+{#                <li class="nav-item">#}
+{#                    <a href="#questions" class="nav-link">Questions</a>#}
+{#                </li>#}
+{#                <li class="nav-item">#}
+{#                    <a href="#team" class="nav-link">team</a>#}
+{#                </li>#}
+{#            </ul>#}
+{#        </div>#}
+{#    </div>#}
+{#</nav>#}
+{##}
+{#<!-- Showcase -->#}
+{#<section#}
+{#        class="bg-success text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start"#}
+{#>#}
+{#    <div class="container">#}
+{#        <div class="d-sm-flex align-items-center justify-content-between">#}
+{#            <div>#}
+{#                <p>#}
+{#                <h3>join furaha cooperative <span class="text-warning"> for both present and future investments </span>#}
+{#                </h3>#}
+{#                <div>#}
+{#                    <div>#}
+{#                        <p class="lead my-3">#}
+{##}
+{#                            Furaha cooperative sacco is a Savings and Credit Cooperative Organization (SACCO) is a#}
+{#                            member-driven#}
+{#                            financial institution#}
+{#                            designed to promote savings and provide affordable credit to its members. SACCOs operate on#}
+{#                            a#}
+{#                            cooperative model, meaning all members have an equal say in its operations and share in its#}
+{#                            success.#}
+{#                    </div>#}
+{##}
+{#                    </p>#}
+{#                    <div>#}
+{#                        <p class="lead my-3">#}
+{#                            Joining a SACCO offers numerous advantages. Members gain access to affordable credit#}
+{#                            facilities,#}
+{#                            enabling them to invest in businesses, pay for education, or meet other financial goals#}
+{#                            without#}
+{#                            the#}
+{#                            burden of high-interest rates. The shared savings model also ensures members can benefit#}
+{#                            from#}
+{#                            dividends based on the SACCO’s profitability, making it a sustainable and rewarding#}
+{#                            financial#}
+{#                            option.#}
+{#                        </p>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <button#}
+{#                        class="btn btn-primary btn-lg"#}
+{#                        data-bs-toggle="modal"#}
+{#                        data-bs-target="#enroll"#}
+{#                >#}
+{#                    Start The Enrollment#}
+{#                </button>#}
+{#            </div>#}
+{#            <img#}
+{#                    class="img-fluid w-50 d-none d-sm-block"#}
+{#                    src="img/showcase.svg"#}
+{#                    alt=""#}
+{#            />#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+{##}
+{#<!-- Newsletter -->#}
+{#<section class="bg-primary text-light p-5">#}
+{#    <div class="container">#}
+{#        <div class="d-md-flex justify-content-between align-items-center">#}
+{#            <h3 class="mb-3 mb-md-0">Sign Up For Our Newsletter</h3>#}
+{##}
+{#            <div class="input-group news-input">#}
+{#                <input type="text" class="form-control" placeholder="Enter Email"/>#}
+{#                <button class="btn btn-dark btn-lg" type="button">Submit</button>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+{##}
+{#<!-- Boxes -->#}
+{#<section class="p-5">#}
+{#    <div class="container">#}
+{#        <div class="row text-center g-4">#}
+{#            <div class="col-md">#}
+{#                <div class="card bg-success text-light">#}
+{#                    <div class="card-body text-center">#}
+{#                        <div class="h1 mb-3">#}
+{#                            <i class="bi bi-laptop"></i>#}
+{#                        </div>#}
+{#                        <h3 class="card-title mb-3">our mission</h3>#}
+{##}
+{#                        <p> class="card-text"?#}
+{#                            To empower our members by providing accessible, affordable, and sustainable financial#}
+{#                            services that foster savings, enable growth, and promote economic well-being. We are#}
+{#                            committed to building a strong, inclusive community where every member has the opportunity#}
+{#                            to achieve financial security and success through cooperative values, transparent#}
+{#                            operations, and responsible financial management.#}
+{#                        </p>#}
+{#                        <a href="#" class="btn btn-primary">Read More</a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-md">#}
+{#                <div class="card bg-secondary text-light bg-danger">#}
+{#                    <div class="card-body text-center">#}
+{#                        <div class="h1 mb-3">#}
+{#                           <i class="bi bi-person"></i>#}
+{#                        </div>#}
+{#                        <h3 class="card-title mb-3">vision</h3>#}
+{#                        <p class="card-text">#}
+{#                            To be a leading and trusted financial cooperative, empowering members to achieve their#}
+{#                            dreams and secure a prosperous future through innovative, member-focused solutions and a#}
+{#                            commitment to sustainable growth#}
+{#                        </p>#}
+{##}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="col-md">#}
+{#                <div class="card  text-light">#}
+{#                    <div class="card bg-secondary  text-light">#}
+{##}
+{#                        <div class="card-body text-center">#}
+{#                            <div class="h1 mb-3">#}
+{#                                <i class="bi bi-people"></i>#}
+{#                            </div>#}
+{#                            <h3 class="card-title mb-3">core value</h3>#}
+{#                            <p class="card-text">#}
+{#                                1). Transparency and Accountability: The SACCO is committed to clear communication and#}
+{#                                responsible management of financial resources, ensuring that members are informed and#}
+{#                                that funds are used effectively#}
+{#                            </p>#}
+{#                            <a href="#" class="btn btn-primary">Read More</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#</section>#}
+{##}
+{#<!-- Learn Sections -->#}
+{#<section id="learn" class="p-5">#}
+{#    <div class="container">#}
+{#        <div class="row align-items-center justify-content-between bg-danger">#}
+{#            <div class="col-md">#}
+{#                <img src="img/fundamentals.svg" class="img-fluid" alt=""/>#}
+{#            </div>#}
+{#            <div class="col-md p-5">#}
+{#                <h2>Learn The Fundamentals</h2>#}
+{#                <p class="lead">#}
+{#                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.#}
+{#                    Similique deleniti possimus magnam corporis ratione facere!#}
+{#                </p>#}
+{#                <p>#}
+{#                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque#}
+{#                    reiciendis eius autem eveniet mollitia, at asperiores suscipit#}
+{#                    quae similique laboriosam iste minus placeat odit velit quos,#}
+{#                    nulla architecto amet voluptates?#}
+{#                </p>#}
+{#                <a href="#" class="btn btn-light mt-3">#}
+{#                    <i class="bi bi-chevron-right"></i> Read More#}
+{#                </a>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+{##}
+{#<section id="learn" class="p-5 bg-secondary text-light">#}
+{#    <div class="container">#}
+{#        <div class="row align-items-center justify-content-between">#}
+{#            <div class="col-md p-5">#}
+{#                <h2>Learn React</h2>#}
+{#                <p class="lead">#}
+{#                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.#}
+{#                    Similique deleniti possimus magnam corporis ratione facere!#}
+{#                </p>#}
+{#                <p>#}
+{#                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque#}
+{#                    reiciendis eius autem eveniet mollitia, at asperiores suscipit#}
+{#                    quae similique laboriosam iste minus placeat odit velit quos,#}
+{#                    nulla architecto amet voluptates?#}
+{#                </p>#}
+{#                <a href="#" class="btn btn-light mt-3">#}
+{#                    <i class="bi bi-chevron-right"></i> Read More#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="col-md">#}
+{#                <img src="img/react" class="img-fluid" alt=""/>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+{##}
+{#<!-- Question Accordion -->#}
+{#<section id="questions" class="p-5">#}
+{#    <div class="container">#}
+{#        <h2 class="text-center mb-4">Frequently Asked Questions</h2>#}
+{#        <div class="accordion accordion-flush" id="questions">#}
+{#            <!-- Item 1 -->#}
+{#            <div class="accordion-item">#}
+{#                <h2 class="accordion-header">#}
+{#                    <button#}
+{#                            class="accordion-button collapsed"#}
+{#                            type="button"#}
+{#                            data-bs-toggle="collapse"#}
+{#                            data-bs-target="#question-one"#}
+{#                    >#}
+{#                        Exactly located?#}
+{#                    </button>#}
+{#                </h2>#}
+{#                <div#}
+{#                        id="question-one"#}
+{#                        class="accordion-collapse collapse"#}
+{#                        data-bs-parent="#questions"#}
+{#                >#}
+{#                    <div class="accordion-body">#}
+{#                        Our SACCO is located along Mombasa Road, Nairobi, Kenya.#}
+{##}
+{##}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- Item 2 -->#}
+{#            <div class="accordion-item">#}
+{#                <h2 class="accordion-header">#}
+{#                    <button#}
+{#                            class="accordion-button collapsed"#}
+{#                            type="button"#}
+{#                            data-bs-toggle="collapse"#}
+{#                            data-bs-target="#question-two"#}
+{#                    >#}
+{##}
+{#                        Is there a joining fee?#}
+{#                    </button>#}
+{#                </h2>#}
+{#                <div#}
+{#                        id="question-two"#}
+{#                        class="accordion-collapse collapse"#}
+{#                        data-bs-parent="#questions"#}
+{#                >#}
+{#                    <div class="accordion-body">#}
+{##}
+{#                        Yes, many SACCOS require a joining fee, which typically covers administrative costs and helps#}
+{#                        establish your membership. This fee can vary depending on the SACCO, but it is usually a#}
+{#                        one-time payment. In addition to the joining fee, new members are often required to make an#}
+{#                        initial deposit into a savings account to activate their membership. It's best to check with the#}
+{#                        specific SACCO for the exact amount and any other membership requirements.#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- Item 3 -->#}
+{#            <div class="accordion-item">#}
+{#                <h2 class="accordion-header">#}
+{#                    <button#}
+{#                            class="accordion-button collapsed"#}
+{#                            type="button"#}
+{#                            data-bs-toggle="collapse"#}
+{#                            data-bs-target="#question-three"#}
+{#                    >#}
+{##}
+{#                        What is Share Capital?#}
+{#                    </button>#}
+{#                </h2>#}
+{#                <div#}
+{#                        id="question-three"#}
+{#                        class="accordion-collapse collapse"#}
+{#                        data-bs-parent="#questions"#}
+{#                >#}
+{#                    <div class="accordion-body">#}
+{#                        Share capital refers to the funds raised by a company or cooperative (like a SACCO) through the#}
+{#                        issuance of shares to its members or investors. In the context of a SACCO, share capital#}
+{#                        represents the money contributed by members as part of their ownership stake in the cooperative.#}
+{#                        These shares are typically purchased by members at a specified price, and the total share#}
+{#                        capital is used to fund the SACCO’s operations, such as providing loans and other financial#}
+{#                        services to its members.#}
+{##}
+{#                        The number of shares held by a member often determines their voting power and dividend#}
+{#                        entitlement, as well as their eligibility to access certain services or loans within the SACCO.#}
+{#                        Share capital is typically seen as a long-term investment, and it can grow over time as the#}
+{#                        SACCO becomes more successful.#}
+{##}
+{##}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- Item 4 -->#}
+{#            <div class="accordion-item">#}
+{#                <h2 class="accordion-header">#}
+{#                    <button#}
+{#                            class="accordion-button collapsed"#}
+{#                            type="button"#}
+{#                            data-bs-toggle="collapse"#}
+{#                            data-bs-target="#question-four"#}
+{#                    >#}
+{#                        how to join Furaha sacco#}
+{#                    </button>#}
+{#                </h2>#}
+{#                <div#}
+{#                        id="question-four"#}
+{#                        class="accordion-collapse collapse"#}
+{#                        data-bs-parent="#questions"#}
+{#                >#}
+{#                    <div class="accordion-body">#}
+{#                        Visit the SACCO office or their official website to fill out a membership application form. The#}
+{#                        form will require personal details such as your full name, identification number, contact#}
+{#                        information, and occupation.#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- Item 5 -->#}
+{#            <div class="accordion-item">#}
+{#                <h2 class="accordion-header">#}
+{#                    <button#}
+{#                            class="accordion-button collapsed"#}
+{#                            type="button"#}
+{#                            data-bs-toggle="collapse"#}
+{#                            data-bs-target="#question-five"#}
+{#                    >#}
+{#                        Do you help me find a job?#}
+{#                    </button>#}
+{#                </h2>#}
+{#                <div#}
+{#                        id="question-five"#}
+{#                        class="accordion-collapse collapse"#}
+{#                        data-bs-parent="#questions"#}
+{#                >#}
+{#                    <div class="accordion-body">#}
+{#                        <p>#}
+{#                            1). Check the SACCO’s Website or Social Media: Our SACCOs post job openings, internships,#}
+{#                            and#}
+{#                            volunteer opportunities on their official website or social media pages. Keep an eye on#}
+{#                            these#}
+{#                            platforms for any announcements.</p>#}
+{#                        <p>#}
+{#                            2). Contact Human Resources (HR): Reach out to the SACCO’s HR department or recruitment team#}
+{#                            to#}
+{#                            inquire about current or upcoming job openings. They may also provide guidance on the hiring#}
+{#                            process.</p>#}
+{#                        <p>#}
+{#                            3). Attend SACCO Events or Meetings: Our SACCOs hold job fairs, recruitment drives, or#}
+{#                            member#}
+{#                            meetings where employment opportunities are discussed. Engaging with these events can help#}
+{#                            you#}
+{#                            stay informed about job openings.#}
+{#                        </p>#}
+{##}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+{##}
+{#<section id="instructors" class="p-5 bg-primary">#}
+{#    <div class="container">#}
+{#        <h2 class="text-center text-white">Executive Team#}
+{#        </h2>#}
+{#        <p class="lead text-center text-white mb-5">#}
+{#            Responsible for the strategic direction, decision-making, and overall management of Furaha cooperative sacco#}
+{#            organization.#}
+{#        </p>#}
+{#        <div class="row g-4">#}
+{#            <div class="col-md-6 col-lg-3">#}
+{#                <div class="card bg-light">#}
+{#                    <div class="card-body text-center">#}
+{#                        <img#}
+{#                                src="https://randomuser.me/api/portraits/men/11.jpg"#}
+{#                                class="rounded-circle mb-3"#}
+{#                                alt=""#}
+{#                        />#}
+{#                        <h3 class="card-title mb-3">John mwai (manager)</h3>#}
+{#                        <p class="card-text">#}
+{#                            Community and Leadership Excellence#}
+{#                        </p>#}
+{#                        <p>Experience in financial management(With a Master’s degree in Finance and over 10 years of#}
+{#                            experience )</p>#}
+{#                        <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>#}
+{#                        <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>#}
+{#                        <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>#}
+{#                        <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#            <div class="col-md-6 col-lg-3">#}
+{#                <div class="card bg-light">#}
+{#                    <div class="card-body text-center">#}
+{#                        <img#}
+{#                                src="https://randomuser.me/api/portraits/women/11.jpg"#}
+{#                                class="rounded-circle mb-3"#}
+{#                                alt=""#}
+{#                        />#}
+{#                        <h3 class="card-title mb-3">Jane kimani(secretary)</h3>#}
+{#                        <p class="card-text">#}
+{#                            skills to deal with senior executive level people#}
+{#                        </p>#}
+{#                        <p>possesses excellent communication</p>#}
+{#                        <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>#}
+{#                        <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>#}
+{#                        <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>#}
+{#                        <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#            <div class="col-md-6 col-lg-3">#}
+{#                <div class="card bg-light">#}
+{#                    <div class="card-body text-center">#}
+{#                        <img#}
+{#                                src="https://randomuser.me/api/portraits/men/12.jpg"#}
+{#                                class="rounded-circle mb-3"#}
+{#                                alt=""#}
+{#                        />#}
+{#                        <h3 class="card-title mb-3">Steve kimutai(Treasurer)</h3>#}
+{#                        <p class="card-text">#}
+{#                            ( 2000-2008)financial analysis Equity bak#}
+{#                        </p>#}
+{#                        <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>#}
+{#                        <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>#}
+{#                        <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>#}
+{#                        <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#            <div class="col-md-6 col-lg-3">#}
+{#                <div class="card bg-light">#}
+{#                    <div class="card-body text-center">#}
+{#                        <img#}
+{#                                src="https://randomuser.me/api/portraits/women/12.jpg"#}
+{#                                class="rounded-circle mb-3"#}
+{#                                alt=""#}
+{#                        />#}
+{#                        <h3 class="card-title mb-3">Sara olo (Director)</h3>#}
+{#                        <p class="card-text">#}
+{#                            (2012- 2024)#}
+{#                            Honored with the Achievement Award for outstanding leadership#}
+{#                        </p>#}
+{#                        <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>#}
+{#                        <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>#}
+{#                        <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>#}
+{#                        <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+{##}
+{#<!-- Contact & Map -->#}
+{#<section class="p-5">#}
+{#    <div class="container">#}
+{#        <div class="row g-4">#}
+{#            <div class="col-md">#}
+{#                <h2 class="text-center mb-4">Contact Info</h2>#}
+{#                <ul class="list-group list-group-flush lead">#}
+{#                    <li class="list-group-item">#}
+{#                        <span class="fw-bold">Location:</span> nairobi kenya#}
+{#                    </li>#}
+{#                    <li class="list-group-item">#}
+{#                        <span class="fw-bold">Secretary Phone No:</span> +254 72333333#}
+{#                    </li>#}
+{#                    <li class="list-group-item">#}
+{#                        <span class="fw-bold">Office Phone No:</span> (333) 333-3333#}
+{#                    </li>#}
+{#                    <li class="list-group-item">#}
+{#                        <span class="fw-bold">hr Email:</span>#}
+{#                        hr.furaha@gmail.com#}
+{#                    </li>#}
+{#                    <li class="list-group-item">#}
+{#                        <span class="fw-bold">office Email:</span>#}
+{#                        office.furaha@gmail.com#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+{#            <div class="col-md">#}
+{#                <div id="map"></div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</section>#}
+{##}
+{#<!-- Footer -->#}
+{#<footer class="p-5 bg-success text-white text-center position-relative">#}
+{#    <div class="container">#}
+{#        <p class="lead">Copyright &copy; 2024 Furaha cooperative sacco </p>#}
+{##}
+{#        <a href="#" class="position-absolute bottom-0 end-0 p-5">#}
+{#            <i class="bi bi-arrow-up-circle h1"></i>#}
+{#        </a>#}
+{#    </div>#}
+{#</footer>#}
+{##}
+{#<!-- Modal -->#}
+{#<div#}
+{#        class="modal fade"#}
+{#        id="enroll"#}
+{#        tabindex="-1"#}
+{#        aria-labelledby="enrollLabel"#}
+{#        aria-hidden="true"#}
+{#>#}
+{#    <div class="modal-dialog">#}
+{#        <div class="modal-content">#}
+{#            <div class="modal-header">#}
+{#                <h5 class="modal-title" id="enrollLabel">Enrollment</h5>#}
+{#                <button#}
+{#                        type="button"#}
+{#                        class="btn-close"#}
+{#                        data-bs-dismiss="modal"#}
+{#                        aria-label="Close"#}
+{#                ></button>#}
+{#            </div>#}
+{#            <div class="modal-body">#}
+{#                <p class="lead">Fill out this form and we will get back to you</p>#}
+{#                <form>#}
+{#                    <div class="mb-3">#}
+{#                        <label for="first-name" class="col-form-label">#}
+{#                            First Name:#}
+{#                        </label>#}
+{#                        <input type="text" class="form-control" id="first-name"/>#}
+{#                    </div>#}
+{#                    <div class="mb-3">#}
+{#                        <label for="last-name" class="col-form-label">Last Name:</label>#}
+{#                        <input type="text" class="form-control" id="last-name"/>#}
+{#                    </div>#}
+{#                    <div class="mb-3">#}
+{#                        <label for="email" class="col-form-label">Email:</label>#}
+{#                        <input type="email" class="form-control" id="email"/>#}
+{#                    </div>#}
+{#                    <div class="mb-3">#}
+{#                        <label for="phone" class="col-form-label">Phone:</label>#}
+{#                        <input type="tel" class="form-control" id="phone"/>#}
+{#                    </div>#}
+{#                </form>#}
+{#            </div>#}
+{#            <div class="modal-footer">#}
+{#                <button#}
+{#                        type="button"#}
+{#                        class="btn btn-secondary"#}
+{#                        data-bs-dismiss="modal"#}
+{#                >#}
+{#                    Close#}
+{#                </button>#}
+{#                <button type="button" class="btn btn-primary">Submit</button>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{##}
+{#<script#}
+{#        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"#}
+{#        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"#}
+{#        crossorigin="anonymous"#}
+{#></script>#}
+{#<script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>#}
+{##}
+{#<script>#}
+{#    mapboxgl.accessToken =#}
+{#        'pk.eyJ1IjoiYnRyYXZlcnN5IiwiYSI6ImNrbmh0dXF1NzBtbnMyb3MzcTBpaG10eXcifQ.h5ZyYCglnMdOLAGGiL1Auw'#}
+{#    var map = new mapboxgl.Map({#}
+{#        container: 'map',#}
+{#        style: 'mapbox://styles/mapbox/streets-v11',#}
+{#        center: [-71.060982, 42.35725],#}
+{#        zoom: 18,#}
+{#    })#}
+{#</script>#}
+{#</body>#}
+{#</html>#}
+{#                  #}
+{#            </ul>#}
+{#            <form class="d-flex" method="get" action="{% url 'search_customer' %}">#}
+{#                <input class="form-control me-2" type="text" name="search" placeholder="Search">#}
+{#                <button class="btn btn-primary" type="submit">Search</button>#}
+{#            </form>#}
+{#        </div>#}
+{#    </div>#}
+{#</nav>#}
+{% block cotentent %}
+    
+	
+{% endblock %}
 
 <div class="container">
     {% for message in messages %}
@@ -105,9 +781,9 @@
 </div>
 
 {% block content %}
-
+    
 {% endblock %}
 </div>
 
-</body>
+</nav>
 </html>

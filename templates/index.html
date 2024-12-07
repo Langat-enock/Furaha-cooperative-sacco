@@ -1,597 +1,660 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    <title>furaha cooparative sacco</title>
-    
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+            crossorigin="anonymous"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link
+            href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href=" {% static 'css' %}../main/assets/css/style.css"/>
+    <title>Furaha cooperative sacco</title>
 </head>
 <body>
-
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
-      <div class="container">
-          
-        <a href="#" class="navbar-brand">FURAHA COOPERATIVE sacco</a>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark py-3 fixed-top">
+    <div class="container">
+        <a href="#" class="navbar-brand">Furaha cooperative sacco</a>
 
         <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navmenu">
-        
-        
-          <span class="navbar-toggler-icon"></span>
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navmenu"
+        >
+            <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navmenu">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a href="#learn" class="nav-link">About us</a>
-            </li>
-            <li class="nav-item">
-              <a href="#questions" class="nav-link">Questions</a>
-            </li>
-            <li class="nav-item">
-              <a href="#team" class="nav-link">Our Team</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+        <div class="collapse navbar-collapse bg-secondary " id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="#about us" class="nav-link">about us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#questions" class="nav-link">Questions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#team" class="nav-link">team</a>
 
-    <!-- Showcase -->
-    <div>
-    <section
-      class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start"
-    >
-      <div class="container">
-        <div class="d-sm-flex align-items-center justify-content-between">
-          <div>
-            <h3>join  <span class="text-warning">furaha cooprative</span></h3>
-            <p class="lead my-4">
-              We focus on teaching our students the fundamentals of the latest
-              and greatest technologies to prepare them for their first dev role
-            </p>
-              </div>
-               <footer>
-
-        <div>
-          
-        
-       
-        <div class="top">
-            <div><?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 512 512" height="32px" id="Layer_1" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path clip-rule="evenodd" d="M256.23,512C396.81,512,512,396.81,512,256.23   C512,115.184,396.81,0,256.23,0C115.184,0,0,115.184,0,256.23C0,396.81,115.184,512,256.23,512L256.23,512z" fill="#3A5BA2" fill-rule="evenodd"/><path clip-rule="evenodd" d="M224.023,160.085c0-35.372,28.575-63.946,63.938-63.946h48.072   v63.946h-32.199c-8.608,0-15.873,7.257-15.873,15.873v32.192h48.072v63.938h-48.072v144.22h-63.938v-144.22h-48.065V208.15h48.065   V160.085z" fill="#FFFFFF" fill-rule="evenodd"/></g></svg></div>
-            <div><?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 512 512" height="32px" id="Layer_1" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path clip-rule="evenodd" d="M256.23,512C396.81,512,512,396.81,512,256.23   C512,115.184,396.81,0,256.23,0C115.184,0,0,115.184,0,256.23C0,396.81,115.184,512,256.23,512L256.23,512z" fill="#3A5BA2" fill-rule="evenodd"/><path clip-rule="evenodd" d="M224.023,160.085c0-35.372,28.575-63.946,63.938-63.946h48.072   v63.946h-32.199c-8.608,0-15.873,7.257-15.873,15.873v32.192h48.072v63.938h-48.072v144.22h-63.938v-144.22h-48.065V208.15h48.065   V160.085z" fill="#FFFFFF" fill-rule="evenodd"/></g></svg></div>
-            <div><?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 512 512" height="32px" id="Layer_1" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path clip-rule="evenodd" d="M256.23,512C396.81,512,512,396.81,512,256.23   C512,115.184,396.81,0,256.23,0C115.184,0,0,115.184,0,256.23C0,396.81,115.184,512,256.23,512L256.23,512z" fill="#3A5BA2" fill-rule="evenodd"/><path clip-rule="evenodd" d="M224.023,160.085c0-35.372,28.575-63.946,63.938-63.946h48.072   v63.946h-32.199c-8.608,0-15.873,7.257-15.873,15.873v32.192h48.072v63.938h-48.072v144.22h-63.938v-144.22h-48.065V208.15h48.065   V160.085z" fill="#FFFFFF" fill-rule="evenodd"/></g></svg></div>
-            <div><?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg enable-background="new 0 0 512 512" height="32px" id="Layer_1" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path clip-rule="evenodd" d="M256.23,512C396.81,512,512,396.81,512,256.23   C512,115.184,396.81,0,256.23,0C115.184,0,0,115.184,0,256.23C0,396.81,115.184,512,256.23,512L256.23,512z" fill="#3A5BA2" fill-rule="evenodd"/><path clip-rule="evenodd" d="M224.023,160.085c0-35.372,28.575-63.946,63.938-63.946h48.072   v63.946h-32.199c-8.608,0-15.873,7.257-15.873,15.873v32.192h48.072v63.938h-48.072v144.22h-63.938v-144.22h-48.065V208.15h48.065   V160.085z" fill="#FFFFFF" fill-rule="evenodd"/></g></svg></div>
-        </div>
-        <div class="bottom">
-           &copy; All Rights Reserved.furaha cooperative sacco.
-        </div>
-
-    </footer>
-            </div>
-            <button
-              class="btn btn-primary btn-lg"
-              data-bs-toggle="modal"
-              data-bs-target="#enroll"
-           <h3>join</h3> 
-          
-            </button>
-          </div>
-          <img
-            class="images1/LOGO.png"
-            alt=""
-          />
-        
-        </div>
-      </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="bg-primary text-light p-5">
-      <div class="container">
-        <div class="d-md-flex justify-content-between align-items-center">
-          <h3 class="mb-3 mb-md-0">Sign Up For Our Newsletter</h3>
-
-          <div class="input-group news-input">
-            <input type="text" class="form-control" placeholder="Enter Email" />
-            <button class="btn btn-dark btn-lg" type="button">Submit</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Boxes -->
-    <section class="p-5">
-      <div class="container">
-        <div class="row text-center g-4">
-          <div class="col-md">
-            <div class="card bg-dark text-light">
-              <div class="card-body text-center">
-                <div class="h1 mb-3">
-                  <i class="bi bi-laptop"></i>
-                </div>
-                <h3 class="card-title mb-3">Virtual</h3>
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Iure, quas quidem possimus dolorum esse eligendi?
-                </p>
-                <a href="#" class="btn btn-primary">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="card bg-secondary text-light">
-              <div class="card-body text-center">
-                <div class="h1 mb-3">
-                  <i class="bi bi-person-square"></i>
-                </div>
-                <h3 class="card-title mb-3">Hybrid</h3>
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Iure, quas quidem possimus dolorum esse eligendi?
-                </p>
-                <a href="#" class="btn btn-dark">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="card bg-dark text-light">
-              <div class="card-body text-center">
-                <div class="h1 mb-3">
-                  <i class="bi bi-people"></i>
-                </div>
-                <h3 class="card-title mb-3">In Person</h3>
-                <p class="card-text">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Iure, quas quidem possimus dolorum esse eligendi?
-                </p>
-                <a href="#" class="btn btn-primary">Read More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Learn Sections -->
-    <section id="learn" class="p-5">
-      <div class="container">
-        <div class="row align-items-center justify-content-between">
-          <div class="col-md">
-              <img src="images1/logo" alt="">
-          </div>
-          <div class="col-md p-5">
-            <h2>Learn The Fundamentals</h2>
-            <p class="lead">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Similique deleniti possimus magnam corporis ratione facere!
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
-              reiciendis eius autem eveniet mollitia, at asperiores suscipit
-              quae similique laboriosam iste minus placeat odit velit quos,
-              nulla architecto amet voluptates?
-            </p>
-            <a href="#" class="btn btn-light mt-3">
-              <i class="bi bi-chevron-right"></i> Read More
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="learn" class="p-5 bg-dark text-light">
-      <div class="container">
-        <div class="row align-items-center justify-content-between">
-          <div class=content,"col-md p-5">
-            <h2>Learn React</h2>
-            <p class="lead">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Similique deleniti possimus magnam corporis ratione facere!
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
-              reiciendis eius autem eveniet mollitia, at asperiores suscipit
-              quae similique laboriosam iste minus placeat odit velit quos,
-              nulla architecto amet voluptates?
-            </p>
-            <a href="#" class="btn btn-light mt-3">
-              <i class="bi bi-chevron-right"></i> Read More
-            </a>
-          </div>
-          <div class="col-md">
-              <img src="images1/LOGO" alt="LOGO">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Question Accordion -->
-    <section id="questions" class="p-5">
-      <div class="container">
-        <h2 class="text-center mb-4">Know much about furaha cooperative sacco</h2>
-        <div class="accordion accordion-flush" id="questions">
-          <!-- Item 1 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#question-one"
-              >
-                 exactly  located?
-              </button>
-            </h2>
-            <div
-              id="question-one"
-              class="accordion-collapse collapse"
-              data-bs-parent="#questions"
-            >
-              <div class="accordion-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                beatae fuga animi distinctio perspiciatis adipisci velit maiores
-                totam tempora accusamus modi explicabo accusantium consequatur,
-                praesentium rem quisquam molestias at quos vero. Officiis ad
-                velit doloremque at. Dignissimos praesentium necessitatibus
-                natus corrupti cum consequatur aliquam! Minima molestias iure
-                quam distinctio velit.
-              </div>
-            </div>
-          </div>
-          <!-- Item 2 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#question-two"
-              >
-                How much does it cost to attend?
-              </button>
-            </h2>
-            <div
-              id="question-two"
-              class="accordion-collapse collapse"
-              data-bs-parent="#questions"
-            >
-              <div class="accordion-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                beatae fuga animi distinctio perspiciatis adipisci velit maiores
-                totam tempora accusamus modi explicabo accusantium consequatur,
-                praesentium rem quisquam molestias at quos vero. Officiis ad
-                velit doloremque at. Dignissimos praesentium necessitatibus
-                natus corrupti cum consequatur aliquam! Minima molestias iure
-                quam distinctio velit.
-              </div>
-            </div>
-          </div>
-          <!-- Item 3 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#question-three"
-              >
-                What do I need to Know?
-              </button>
-            </h2>
-            <div
-              id="question-three"
-              class="accordion-collapse collapse"
-              data-bs-parent="#questions"
-            >
-              <div class="accordion-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                beatae fuga animi distinctio perspiciatis adipisci velit maiores
-                totam tempora accusamus modi explicabo accusantium consequatur,
-                praesentium rem quisquam molestias at quos vero. Officiis ad
-                velit doloremque at. Dignissimos praesentium necessitatibus
-                natus corrupti cum consequatur aliquam! Minima molestias iure
-                quam distinctio velit.
-              </div>
-            </div>
-          </div>
-          <!-- Item 4 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#question-four"
-              >
-                How Do I sign up?
-              </button>
-            </h2>
-            <div
-              id="question-four"
-              class="accordion-collapse collapse"
-              data-bs-parent="#questions"
-            >
-              <div class="accordion-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                beatae fuga animi distinctio perspiciatis adipisci velit maiores
-                totam tempora accusamus modi explicabo accusantium consequatur,
-                praesentium rem quisquam molestias at quos vero. Officiis ad
-                velit doloremque at. Dignissimos praesentium necessitatibus
-                natus corrupti cum consequatur aliquam! Minima molestias iure
-                quam distinctio velit.
-              </div>
-            </div>
-          </div>
-          <!-- Item 5 -->
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#question-five"
-              >
-                Do you help me find a job?
-              </button>
-            </h2>
-            <div
-              id="question-five"
-              class="accordion-collapse collapse"
-              data-bs-parent="#questions"
-            >
-              <div class="accordion-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                beatae fuga animi distinctio perspiciatis adipisci velit maiores
-                totam tempora accusamus modi explicabo accusantium consequatur,
-                praesentium rem quisquam molestias at quos vero. Officiis ad
-                velit doloremque at. Dignissimos praesentium necessitatibus
-                natus corrupti cum consequatur aliquam! Minima molestias iure
-                quam distinctio velit.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="instructors" class="p-5 bg-primary">
-      <div class="container">
-        <h1 class="text-center text-white">Our management team</h1>
-        <p class="lead text-center text-white mb-5">
-          Our team all have more years working  in the
-          industry not only kenya but also at international industries
-        </p>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-3">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <img
-                  src="https://randomuser.me/api/portraits/men/11.jpg"
-                  class="rounded-circle mb-3"
-                  alt=""
-                />
-                <h3 class="card-title mb-3">John(chairman)</h3>
-                <p class="card-text">
-                  Leadership and Oversight
-                    
-                </p>
-                  <p>Strategic Direction</p>
-                  <p>Compliance and Accountability</p>
-                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
-                <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
-                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
-                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <img
-                  src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAA
-                  D/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQ
-                  sJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc
-                  3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//A
-                  ABEIAJQBBwMBIgACEQEDEQH/xAAcAAAABwEBAAAAAAAAAAAAAAAAAQIDBAUGBwj/xAB
-                  AEAABAwIEAQkFBgQGAwEAAAABAAIDBBEFEiExBgcTIjJBUWFxgRQjM5GhJEJSYnKxFbL
-                  B0TRjgpLC4RZT8EP/xAAZAQEBAQEBAQAAAAAAAAAAAAAAAQIDBAX/xAAlEQEBAAIBAwQ
-                  CAwEAAAAAAAAAAQIRAwQSIRMxQVEUYSIyQgX/2gAMAwEAAhEDEQA/ANxvAkYdFzjHD8y
-                  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
-                  rHDfCOD4VXwTRQOnmaQQ+odnsfLb6Lo7vPtRoKoQ4oIIIP/2Q=="
-                  class="rounded-circle mb-3"
-                  alt=""
-                />
-                <h3 class="card-title mb-3">vicent koskei (HR)</h3>
-                <p class="card-text">
-                  Setting the strategic goals and policies of the SACCO in line with its mission and vision.
-Ensuring compliance with laws, regulations, and the SACCO's bylaws.
-Safeguarding the interests of the member
-                    ensuring transparency in decision-making.
-                </p>
-                <a href="twitter.com">twitter<i class="bi bi-twitter text-dark mx-1"></i></a>
-                <a href="facebook.com">facebook<i class="bi bi-facebook text-dark mx-1"></i></a>
-                <a href="linkedin.com">linkedin<i class="bi bi-linkedin text-dark mx-1"></i></a>
-                <a href="instagram.com">instagram<i class="bi bi-instagram text-dark mx-1"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <img
-                  src="https://randomuser.me/api/portraits/men/12.jpg"
-                  class="rounded-circle mb-3"
-                  alt=""
-                />
-                <h3 class="card-title mb-3">steve maina  (treasurer)</h3>
-                <p class="card-text">
-            Strong analytical skills, attention to detail,
-                    and integrity are essential for a successful treasurer. 
-                </p>
-                <a href="#">twitter<i class="bi bi-twitter text-dark mx-1"></i></a>
-                <a href="#">facebook<i class="bi bi-facebook text-dark mx-1"></i></a>
-                <a href="#">linkedin<i class="bi bi-linkedin text-dark mx-1"></i></a>
-                <a href="#">instergram<i class="bi bi-instagram text-dark mx-1"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3">
-            <div class="card bg-light">
-              <div class="card-body text-center">
-                <img
-                  src="https://randomuser.me/api/portraits/women/12.jpg"
-                  class="rounded-circle mb-3"
-                  alt=""
-                />
-                <h3 class="card-title mb-3">Sara otieno  (secretary)</h3>
-                <p class="card-text">
-                Skilled in document management, customer communication,
-                    and scheduling, ensuring smooth operations and compliance with  standards. Proficient in office tools and banking software,
-                    with a proven ability to maintain accuracy and confidentiality.
-                </p>
-                <a href="#">twitter<i class="bi bi-twitter text-dark mx-1"></i></a>
-                <a href="#">facebook<i class="bi bi-facebook text-dark mx-1"></i></a>
-                <a href="#">linkiden<i class="bi bi-linkedin text-dark mx-1"></i></a>
-                <a href="#">instagram<i class="bi bi-instagram text-dark mx-1"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact & Map -->
-    <section class="p-5">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-md">
-            <h2 class="text-center mb-4">Contact Info</h2>
-            <ul class="list-group list-group-flush lead">
-              <li class="list-group-item">
-                <span class="fw-bold">Main Location:</span> Nairobi, Kenya
-              </li>
-              <li class="list-group-item">
-                <span class="fw-bold">Hr Phone number:</span> +254 724556745
-              </li>
-              <li class="list-group-item">
-                <span class="fw-bold">secretary Phone:</span> +254 73333333
-              </li>
-              <li class="list-group-item">
-                <span class="fw-bold">Office  Email:</span> 
-                office@gmail.com
-              </li>
-              <li class="list-group-item">
-                <span class="fw-bold">hr email:</span>
-                hr@gmail.com
-              </li>
+                    <a href="{% url 'login' %}"><i
+                            class="text-black-50 border-bottom-0 dropdown-item-textuppercase mx-4">login</i></a>
+                </li>
             </ul>
-          </div>
-          <div class="col-md">
-            <div id="map"></div>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+</nav>
+<div><img src="{% static 'images1/background.jpg' %}" alt="background"></div>
 
-    <!-- Footer -->
-    <footer class="p-5 bg-dark text-white text-center position-relative">
-      <div class="container">
-        <p class="lead">Copyright &copy.Furaha cooperative sacco
-        <a href="#" class="position-absolute bottom-0 end-0 p-5">
-          <i class="bi bi-arrow-up-circle h1"></i>
-        </a>
-      </div>
-    </footer>
+<div>
+    <img src="{% static 'images1/background.jpg' %}" alt="">
+</div>
 
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="enroll"
-      tabindex="-1"
-      aria-labelledby="enrollLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="enrollLabel">join furaha</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <p class="lead">Fill out this form and we will get back to you</p>
-            <form>
-              <div class="mb-3">
-                <label for="first-name" class="col-form-label">
-                  First Name:
-                </label>
-                <input type="text" class="form-control" id="first-name" />
-              </div>
-              <div class="mb-3">
-                <label for="last-name" class="col-form-label">Last Name:</label>
-                <input type="text" class="form-control" id="last-name" />
-              </div>
-              <div class="mb-3">
-                <label for="email" class="col-form-label">Email:</label>
-                <input type="email" class="form-control" id="email" />
-              </div>
-              <div class="mb-3">
-                <label for="phone" class="col-form-label">Phone:</label>
-                <input type="tel" class="form-control" id="phone" />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Submit</button>
-          </div>
+<!-- Showcase -->
+<section
+        class="bg-success text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start"
+>
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div>
+                <p>
+                <h3> furaha cooperative <span class="text-warning"> for both present and future investments </span>
+                </h3>
+                <div>
+                    <div>
+                        <p class="lead my-3">
+
+                            Furaha cooperative sacco is a Savings and Credit Cooperative Organization (SACCO) is a
+                            member-driven
+                            financial institution
+                            designed to promote savings and provide affordable credit to its members. SACCOs operate on
+                            a
+                            cooperative model, meaning all members have an equal say in its operations and share in its
+                            success.
+                    </div>
+
+                    </p>
+                    <div>
+                        <p class="lead my-3">
+                            Joining a SACCO offers numerous advantages. Members gain access to affordable credit
+                            facilities,
+                            enabling them to invest in businesses, pay for education, or meet other financial goals
+                            without
+                            the
+                            burden of high-interest rates. The shared savings model also ensures members can benefit
+                            from
+                            dividends based on the SACCO’s profitability, making it a sustainable and rewarding
+                            financial
+                            option.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="background image">
+                    <div>
+                        <img src="data:image/jpeg;base64,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"
+                             alt="" style="width: 800px; height: auto;>
+                    </div>
+                    <div>
+                        
+                         <p class="lead my-3">
+                            Joining a SACCO offers numerous advantages. Members gain access to affordable credit
+                            facilities,
+                            enabling them to invest in businesses, pay for education, or meet other financial goals
+                            without
+                            the
+                            burden of high-interest rates. The shared savings model also ensures members can benefit
+                            from
+                            dividends based on the SACCO’s profitability, making it a sustainable and rewarding
+                            financial
+                            option.
+                        </p>
+                        
+                    </div>
+                </div>
+
+
+            </div>
+            <img
+                    class=" img-fluid w-50 d-none d-sm-block"
+                    src="{% static 'images1/background.jpg' %}img/showcase.svg"
+                    alt=""
+            />
         </div>
-      </div>
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section class="bg-dark text-light p-5">
+
+    <div>
+        <img src="{% static 'images1/background.jpg' %}" alt="">
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+</section>
 
-    <script>
-      mapboxgl.accessToken =
+<!-- Boxes -->
+<section class="p-5">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md">
+                <div class="card bg-success text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <h3 class="card-title mb-3">our mission</h3>
+
+                        <p> class="card-text"?
+                            To empower our members by providing accessible, affordable, and sustainable financial
+                            services that foster savings, enable growth, and promote economic well-being. We are
+                            committed to building a strong, inclusive community where every member has the opportunity
+                            to achieve financial security and success through cooperative values, transparent
+                            operations, and responsible financial management.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card btn-group-lg text-light bg-danger">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi border-info-subtle"></i>
+                        </div>
+                        <h3 class="card-title mb-3">vision</h3>
+                        <p class="card-text">
+                            To be a leading and trusted financial cooperative, empowering members to achieve their
+                            dreams and secure a prosperous future through innovative, member-focused solutions and a
+                            commitment to sustainable growth
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card  text-light">
+                    <div class="card bg-secondary  text-light">
+
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <h3 class="card-title mb-3">Sacco core value</h3>
+                            <p class="card-text">
+                                1). Transparency and Accountability: The SACCO is committed to clear communication and
+                                responsible management of financial resources, ensuring that members are informed and
+                                that funds are used effectively
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- Learn Sections -->
+<section id="learn" class="p-5">
+    <div class="container">
+        <div class="row align-items-center justify-content-between bg-danger">
+            <div class="col-md">
+                <img src="{% static 'images1' %}img/fundamentals.svg" class="img-fluid" alt=""/>
+            </div>
+            <div class="col-md p-5">
+                <h2>Annual Sacco Society Levy 2024
+                </h2>
+                <p class="lead">
+                    <img src="{% static 'sacco picture.png' %}" alt="">
+                <h3>Introduction</h3>
+                Data from the State Department of Cooperatives shows that SACCO savings’ value hit one trillion mark
+                in the financial year 2023, for the first time amid economic challenges. While this is a huge
+                milestone for the SACCO movement, the Government has introduced a new levy on the non- withdrawable
+                SACCO deposits. Non- withdrawable SACCO deposits mean the share capital paid by a SACCO member that
+                cannot be reduced or removed. Further, a SACCO is categorized as non-withdrawable deposit taking if
+                it operates in receiving deposits that are not available for withdrawal for the duration of
+                membership but can be used as collateral to obtain loans .
+
+                <link rel="stylesheet" href="https://prium.github.io/slick/v2.0.0/blocks/header-2.html">
+                </p>
+                <p>
+                <h3>Tax Rate and Deduction</h3>
+                A schedule by the Sacco Societies Regulatory Authority (SASRA) shows that all SACCOs registered
+                under the Sacco Societies (Non-Deposit Taking Business) Regulations, 2020, would from January 1,
+                2024; pay a varied annual levy over the next four years up to December 31, 2027. The levy will be
+                known as Annual Sacco Societies Levy and it will be set at 0.10% of the non-withdrawable deposits
+                for 2024, before climbing to 0.13% in 2025, 0.14% in 2026, and 0.15% in 2027. Specifically, the levy
+                paid shall be based on the total non-withdrawable deposits held by the Sacco society as indicated by
+                the audited financial statements of the Sacco society for the immediately preceding financial year.
+                </p>
+
+                <a href="#" class="btn btn-light mt-3">
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="learn" class="p-5 bg-secondary text-light">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md p-5">
+                <h2>The Purpose of the Levy</h2>
+                <div>
+                    <p class="lead">
+                        While in the recent past, the government has put a lot of effort into boosting revenues through
+                        tax
+                        collection, the main aim of deducting the levy is to fund the sector regulator’s operations
+                        (SASRA).
+                        In addition, the levy will aid SASRA to gain some financial independence by reducing its
+                        reliability
+                        on the Exchequer
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        Further, a SACCO is categorized as non-withdrawable deposit taking if it operates in receiving
+                        deposits that are not available for withdrawal for the duration of membership but can be used as
+                        collateral to obtain loans and domestic money transfers only.
+                    </p>
+                </div>
+                <a href="#" class="btn btn-light mt-3">
+
+                </a>
+            </div>
+            <div class="col-md">
+                <img src="{% static 'images1' %}" class="img-fluid" alt=""/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Question Accordion -->
+<section id="questions" class="p-5">
+    <div class="container">
+        <h2 class="text-center mb-4">know much about our sacco</h2>
+        <div class="accordion accordion-flush" id="questions">
+            <!-- Item 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#question-one"
+                    >
+                        Exactly located?
+                    </button>
+                </h2>
+                <div
+                        id="question-one"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#questions"
+                >
+                    <div class="accordion-body">
+                        Our SACCO is located along Mombasa Road, Nairobi, Kenya.
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#question-two"
+                    >
+
+                        Is there a joining fee?
+                    </button>
+                </h2>
+                <div
+                        id="question-two"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#questions"
+                >
+                    <div class="accordion-body">
+
+                        Yes, many SACCOS require a joining fee, which typically covers administrative costs and helps
+                        establish your membership. This fee can vary depending on the SACCO, but it is usually a
+                        one-time payment. In addition to the joining fee, new members are often required to make an
+                        initial deposit into a savings account to activate their membership. It's best to check with the
+                        specific SACCO for the exact amount and any other membership requirements.
+                    </div>
+                </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#question-three"
+                    >
+
+                        What is Share Capital?
+                    </button>
+                </h2>
+                <div
+                        id="question-three"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#questions"
+                >
+                    <div class="accordion-body">
+                        Share capital refers to the funds raised by a company or cooperative (like a SACCO) through the
+                        issuance of shares to its members or investors. In the context of a SACCO, share capital
+                        represents the money contributed by members as part of their ownership stake in the cooperative.
+                        These shares are typically purchased by members at a specified price, and the total share
+                        capital is used to fund the SACCO’s operations, such as providing loans and other financial
+                        services to its members.
+
+                        The number of shares held by a member often determines their voting power and dividend
+                        entitlement, as well as their eligibility to access certain services or loans within the SACCO.
+                        Share capital is typically seen as a long-term investment, and it can grow over time as the
+                        SACCO becomes more successful.
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#question-four"
+                    >
+                        how to join Furaha sacco
+                    </button>
+                </h2>
+                <div
+                        id="question-four"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#questions"
+                >
+                    <div class="accordion-body">
+                        Visit the SACCO office or their official website to fill out a membership application form. The
+                        form will require personal details such as your full name, identification number, contact
+                        information, and occupation.
+                    </div>
+                </div>
+            </div>
+            <!-- Item 5 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#question-five"
+                    >
+                        Do you help me find a job?
+                    </button>
+                </h2>
+                <div
+                        id="question-five"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#questions"
+                >
+                    <div class="accordion-body">
+                        <p>
+                            1). Check the SACCO’s Website or Social Media: Our SACCOs post job openings, internships,
+                            and
+                            volunteer opportunities on their official website or social media pages. Keep an eye on
+                            these
+                            platforms for any announcements.</p>
+                        <p>
+                            2). Contact Human Resources (HR): Reach out to the SACCO’s HR department or recruitment team
+                            to
+                            inquire about current or upcoming job openings. They may also provide guidance on the hiring
+                            process.</p>
+                        <p>
+                            3). Attend SACCO Events or Meetings: Our SACCOs hold job fairs, recruitment drives, or
+                            member
+                            meetings where employment opportunities are discussed. Engaging with these events can help
+                            you
+                            stay informed about job openings.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="instructors" class="p-5 bg-primary">
+    <div class="container">
+        <h2 class="text-center text-white">Executive Team
+        </h2>
+        <p class="lead text-center text-white mb-5">
+            Responsible for the strategic direction, decision-making, and overall management of Furaha cooperative sacco
+            organization.
+        </p>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <img
+                                src="https://randomuser.me/api/portraits/men/11.jpg"
+                                class="rounded-circle mb-3"
+                                alt=""
+                        />
+                        <h3 class="card-title mb-3">John mwai (manager)</h3>
+                        <p class="card-text">
+                            Community and Leadership Excellence
+                        </p>
+                        <p>Experience in financial management(With a Master’s degree in Finance and over 10 years of
+                            experience )</p>
+                        <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <img
+                                src="https://randomuser.me/api/portraits/women/11.jpg"
+                                class="rounded-circle mb-3"
+                                alt=""
+                        />
+                        <h3 class="card-title mb-3">Jane kimani(secretary)</h3>
+                        <p class="card-text">
+                            skills to deal with senior executive level people
+                        </p>
+                        <p>possesses excellent communication</p>
+                        <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+
+                        <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <img
+                                src="https://randomuser.me/api/portraits/men/12.jpg"
+                                class="rounded-circle mb-3"
+                                alt=""
+                        />
+                        <h3 class="card-title mb-3">Steve kimutai(Treasurer)</h3>
+                        <p class="card-text">
+                            ( 2000-2008)financial analysis Equity bak
+                        </p>
+                        <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <img
+                                src="https://randomuser.me/api/portraits/women/12.jpg"
+                                class="rounded-circle mb-3"
+                                alt=""
+                        />
+                        <h3 class="card-title mb-3">Sara olo (Director)</h3>
+                        <p class="card-text">
+                            (2012- 2024)
+                            Honored with the Achievement Award for outstanding leadership
+                        </p>
+                        <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact & Map -->
+<section class="p-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md">
+                <h2 class="text-center mb-4">Contact Info</h2>
+                <ul class="list-group list-group-flush lead">
+                    <li class="list-group-item">
+                        <span class="fw-bold">Location:</span> nairobi kenya
+                    </li>
+                    <li class="list-group-item">
+                        <span class="fw-bold">Secretary Phone No:</span> +254 72333333
+                    </li>
+                    <li class="list-group-item">
+                        <span class="fw-bold">Office Phone No:</span> (333) 333-3333
+                    </li>
+                    <li class="list-group-item">
+                        <span class="fw-bold">hr Email:</span>
+                        hr.furaha@gmail.com
+                    </li>
+                    <li class="list-group-item">
+                        <span class="fw-bold">office Email:</span>
+                        office.furaha@gmail.com
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="p-5 bg-success text-white text-center position-relative">
+    <div class="container">
+        <p class="lead">Copyright &copy; 2024 Furaha cooperative sacco </p>
+
+        <a href="#" class="position-absolute bottom-0 end-0 p-5">
+            <i class="bi bi-arrow-up-circle h1"></i>
+        </a>
+    </div>
+</footer>
+
+<!-- Modal -->
+<div
+        class="modal fade"
+        id="enroll"
+        tabindex="-1"
+        aria-labelledby="enrollLabel"
+        aria-hidden="true"
+>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="enrollLabel">Enrollment</h5>
+                <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                ></button>
+            </div>
+            <div class="modal-body">
+                <p class="lead">Fill out this form and we will get back to you</p>
+                <form>
+                    <div class="mb-3">
+                        <label for="first-name" class="col-form-label">
+                            First Name:
+                        </label>
+                        <input type="text" class="form-control" id="first-name"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="last-name" class="col-form-label">Last Name:</label>
+                        <input type="text" class="form-control" id="last-name"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="col-form-label">Email:</label>
+                        <input type="email" class="form-control" id="email"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="col-form-label">Phone:</label>
+                        <input type="tel" class="form-control" id="phone"/>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                >
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"
+></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+
+<script>
+    mapboxgl.accessToken =
         'pk.eyJ1IjoiYnRyYXZlcnN5IiwiYSI6ImNrbmh0dXF1NzBtbnMyb3MzcTBpaG10eXcifQ.h5ZyYCglnMdOLAGGiL1Auw'
-      var map = new mapboxgl.Map({
+    var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [-71.060982, 42.35725],
         zoom: 18,
-      })
-    </script>
-  </body>
-
-
-<body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+    })
+</script>
 </body>
 </html>
